@@ -1,3 +1,9 @@
+@import 'settings';
+@import '../../../bower_components/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
 html,body{
    margin: 0;
    padding: 0;
@@ -13,7 +19,7 @@ html,body{
   margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 1.063em) { } 
+@media only screen and (min-width: 1.063em) { }
 
 .header{
   width: 100%;
@@ -32,7 +38,7 @@ h1.heading{
   font-weight: bold;
   line-height: 1.4;
   position: relative;
-  display:inline-block; 
+  display:inline-block;
 }
 h1.heading:after {
   content: '';
@@ -42,12 +48,11 @@ h1.heading:after {
   width: 0%;
   border-bottom: 2px solid black;
   transition: 0.4s;
-}
 
+}
 h1.heading:hover:after {
   width: 100%;
 }
-
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -59,7 +64,7 @@ h1.heading:hover:after {
 
 @font-face {
   font-family: "myCustomFont";
-  src: url(fonts/BebasNeueLight.ttf) format("truetype");
+  src: url(../fonts/BebasNeueLight.ttf) format("truetype");
 }
 
 #footerText {
@@ -75,16 +80,16 @@ h1.heading:hover:after {
 }
 
 #div-imageModal{
- outline-style: none;
- width: 75%;
- top:10% !important;
- padding: 0 !important;
- border: 2px solid white !important;
+  outline-style: none;
+  width: 75%;
+  top:10% !important;
+  padding: 0 !important;
+  border: 2px solid white !important;
 }
 
 .navigation{
   float: right;
-  padding-top: 0.6em
+  padding-top: 0.6em;
 }
 ul.navBar{
   display: inline-block;
@@ -170,23 +175,28 @@ li.navList{
   padding-top:3em;
 }
 .contactContent{
- font-size:1.6em;
- word-spacing: .2em;
+  font-size:1.6em;
+  word-spacing: .2em;
 }
+
 .bar{
   font-size: 8em;
   font-weight: lighter;
   color:black;
 }
+
 .facebook{
   font-size: 1.6em;
 }
+
 .instagram{
   font-size: 1.85em;
 }
+
 .behance{
   font-size: 1.8em;
 }
+
 .devianart{
   font-size: 1.5em;
 }
