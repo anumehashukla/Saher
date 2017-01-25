@@ -1,3 +1,9 @@
+@import 'settings';
+@import '../../../bower_components/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
 html,body{
    margin: 0;
    padding: 0;
@@ -31,7 +37,7 @@ h1.heading{
   font-weight: bold;
   line-height: 1.4;
   position: relative;
-    display:inline-block; 
+    display:inline-block;
 }
 h1.heading:after {
   content: '';
@@ -57,7 +63,7 @@ h1.heading:hover:after {
 
 @font-face {
   font-family: "myCustomFont";
-  src: url(fonts/BebasNeueLight.ttf) format("truetype");
+  src: url(../fonts/BebasNeueLight.ttf) format("truetype");
 }
 
 #footerText {
