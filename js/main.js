@@ -1,54 +1,100 @@
 "use strict";
 var animated= false;
 
-$(window).bind("load", function() {
-  setTimeout(loadHeader, 2000);
 
+
+
+$("#initialImage").on("click", function() {
+	loadHeader();
 });
+
+$(document).ready(function(){
+	if(window.location.hash ===''){									//First Load
+ 		$('#initialImage').fadeIn("slow");
+ 		setTimeout(loadHeader, 2000);
+	}
+	else if(window.location.hash !==''){
+	 loadHeader();
+	}
+	$(document).foundation();
+});
+
+
 
 $(window).on('hashchange', function() {
 if(window.location.hash ===''){
-  $(".div-imageContainer").css("display", "block");
-  $(".div-subContainer").css("display", "none");
+		loadHome();
+	}
+	else if(window.location.hash ==='#'){
+		loadHome();
+	}
+	else if(window.location.hash ==='#bio'){
+		loadBio();
+	}
+	else if(window.location.hash ==='#contact'){
+  	loadContact();
+	}
+});
 
+
+function loadHeader(){
+
+ if(!animated){
+ $("#initialImage").fadeOut( "slow" );
+ $(".header").css("visibility", "visible");
+ 		$(".header").animate({"margin": "0 0 0 0"}, 800, 'linear', function(){
+ 			//setTimeout(loadImageContainer, 1000);
+ 			if(window.location.hash ===''){
+				loadImageContainer();
+			}
+			else if(window.location.hash ==='#'){
+				loadImageContainer();
+			}
+			else if(window.location.hash ==='#bio'){
+				loadBio();
+			}
+			else if(window.location.hash ==='#contact'){
+  			loadContact();
+			}
+			animated=true;
+ 		});	
+}	
 }
-else if(window.location.hash ==='#bio'){
-  $(".div-imageContainer").css("display", "none");
+
+function loadImageContainer(){
+	//$(".imageContainer").addClass('animate');
+	$(".imageContainer .imageStyle").each(function(index, value){
+		var $ele = $(value);
+		setTimeout(function(){
+			$ele.addClass("animate");
+		},index*100);
+	});
+}
+
+function loadHome(){
+	$(".imageContainer").css("display", "block");
+  $(".div-subContainer").css("display", "none");
+  loadImageContainer();
+}
+function loadBio(){
+  $(".imageContainer").css("display", "none");
   $(".div-subContainer").css("visibility", "visible");
   $(".div-subContainer").css("display", "block");
   $(".div-subContainer").load("bio.html");
 }
-else if(window.location.hash ==='#contact'){
-  $(".div-imageContainer").css("display", "none");
+
+function loadContact(){
+	$(".imageContainer").css("display", "none");
   $(".div-subContainer").css("visibility", "visible");
-   $(".div-subContainer").css("display", "block");
-  $(".div-subContainer").load("contact.html");
-	
+  $(".div-subContainer").css("display", "block");
+  $(".div-subContainer").load("contact.html");	
 }
+
+$("#contentWork").on("click", '.openModal', function() {
+	$(".modalImage").attr("src",$(this).data('img'));
+	$("#div-imageModal").foundation('open');
+
 });
 
 
-$("#introImage").on("click", (function() {
-	loadHeader();
-}));
-
-
-
-function loadHeader(){
- $("#introImage").fadeOut( "slow" );
-
- if(!animated){
- $(".header").animate({"margin": "0 0 0 0"}, 800, 'linear', function(){
- 	  //setTimeout(loadImageContainer, 1000);
- 	  loadImageContainer();
-	animated=true;
- });
-		
-}	
-	
-}
-function loadImageContainer(){
- //$(".div-imageContainer").css("visibility", "visible");
-	$(".div-imageContainer").addClass('animate');
-}
 
