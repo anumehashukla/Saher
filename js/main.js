@@ -61,6 +61,15 @@ function loadHeader(){
 }	
 }
 
+$( ".navIcons" ).hover(
+  function() {
+   
+  }, function() {
+   //$(this).css("width",$(this).innerWidth());
+  }
+);
+
+
 function loadImageContainer(){
 	//$(".imageContainer").addClass('animate');
 	$(".imageContainer .imageStyle").each(function(index, value){
