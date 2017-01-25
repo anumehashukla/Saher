@@ -1,11 +1,9 @@
 "use strict";
-var animated= false;
-
-
+var animated = false;
 
 
 $("#initialImage").on("click", function() {
-	loadHeader();
+	loadImageContainer();
 });
 
 $(document).ready(function(){
@@ -19,16 +17,8 @@ $(document).ready(function(){
 	$(document).foundation();
 });
 
-
-
 $(window).on('hashchange', function() {
-if(window.location.hash ===''){
-		loadHome();
-	}
-	else if(window.location.hash ==='#'){
-		loadHome();
-	}
-	else if(window.location.hash ==='#bio'){
+if(window.location.hash ==='#bio'){
 		loadBio();
 	}
 	else if(window.location.hash ==='#contact'){
@@ -47,27 +37,17 @@ function loadHeader(){
  			if(window.location.hash ===''){
 				loadImageContainer();
 			}
-			else if(window.location.hash ==='#'){
-				loadImageContainer();
-			}
 			else if(window.location.hash ==='#bio'){
 				loadBio();
 			}
 			else if(window.location.hash ==='#contact'){
   			loadContact();
 			}
-			animated=true;
+			
  		});	
+ 		animated=true;
 }	
 }
-
-$( ".navIcons" ).hover(
-  function() {
-   
-  }, function() {
-   //$(this).css("width",$(this).innerWidth());
-  }
-);
 
 
 function loadImageContainer(){
@@ -83,7 +63,7 @@ function loadImageContainer(){
 function loadHome(){
 	$(".imageContainer").css("display", "block");
   $(".div-subContainer").css("display", "none");
-  loadImageContainer();
+  //loadImageContainer();
 }
 function loadBio(){
   $(".imageContainer").css("display", "none");

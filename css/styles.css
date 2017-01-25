@@ -13,6 +13,7 @@ html,body{
   margin-bottom: 1em;
 }
 
+@media only screen and (min-width: 1.063em) { } 
 
 .header{
   width: 100%;
@@ -31,7 +32,7 @@ h1.heading{
   font-weight: bold;
   line-height: 1.4;
   position: relative;
-    display:inline-block; 
+  display:inline-block; 
 }
 h1.heading:after {
   content: '';
@@ -39,13 +40,14 @@ h1.heading:after {
   bottom: 0;
   left: 0;
   width: 0%;
-  border-bottom: 1.5px solid black;
+  border-bottom: 2px solid black;
   transition: 0.4s;
-
 }
+
 h1.heading:hover:after {
   width: 100%;
 }
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -68,17 +70,21 @@ h1.heading:hover:after {
 }
 
 #initialImage{
-  margin: -30px; /* In accordance to the container div margin*/
   width:100%;
   display: none;
 }
 
 #div-imageModal{
  outline-style: none;
+ width: 75%;
+ top:10% !important;
+ padding: 0 !important;
+ border: 2px solid white !important;
 }
+
 .navigation{
   float: right;
-  padding-top: 0.6em;
+  padding-top: 0.6em
 }
 ul.navBar{
   display: inline-block;
@@ -100,7 +106,7 @@ li.navList{
   margin-right: 1em;
 }
 
-a:after {
+.navIcons:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -109,14 +115,13 @@ a:after {
   border-bottom: 1px solid black;
   transition: 0.4s;
 }
-a:hover:after {
+.navIcons:hover:after {
   width: 100%;
 }
 
 .socialIcons{
   color: black !important;
   text-decoration: none;
-  font-size: 1.5em;
   padding-right: .5em;
 }
 
@@ -165,23 +170,23 @@ a:hover:after {
   padding-top:3em;
 }
 .contactContent{
-font-size:1.6em;
-word-spacing: .2em;
+ font-size:1.6em;
+ word-spacing: .2em;
 }
-
-.navbar-toggle {
-    position: relative;
-    float: right;
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-right: 15px;
-    margin-bottom: 8px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+.bar{
+  font-size: 8em;
+  font-weight: lighter;
+  color:black;
 }
-
-.navbtn{
-width: 50px;
+.facebook{
+  font-size: 1.6em;
+}
+.instagram{
+  font-size: 1.85em;
+}
+.behance{
+  font-size: 1.8em;
+}
+.devianart{
+  font-size: 1.5em;
 }
