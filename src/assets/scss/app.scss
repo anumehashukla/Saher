@@ -42,11 +42,12 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
+
 html,body{
    margin: 0;
    padding: 0;
    color: black !important;
-   font-family: "myCustomFont" !important;
+   font-family: "pageFont" !important;
    letter-spacing: .1em;
    -webkit-font-smoothing: auto;
 }
@@ -57,26 +58,27 @@ html,body{
   margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 1.063em) { }
 
 .header{
   width: 100%;
   height: 60px !important;
   margin-top: -300px;
   visibility: hidden;
-  /*margin-left: -30px;
-  margin-right:-30px;*/
-  /*margin: 0 0 0 0;
-  position: relative;  */
 }
+
+
 h1.heading{
-  font-family: "myCustomFont" !important;
+  font-family: "pageFont" !important;
   margin: 0px;
   font-size: 3em !important;
   font-weight: bold;
   line-height: 1.4;
   position: relative;
   display:inline-block;
+  @include breakpoint(small only) {
+     font-size: 5.5em !important;
+  }
+  
 }
 h1.heading:after {
   content: '';
@@ -86,7 +88,6 @@ h1.heading:after {
   width: 0%;
   border-bottom: 2px solid black;
   transition: 0.4s;
-
 }
 h1.heading:hover:after {
   width: 100%;
@@ -101,12 +102,26 @@ h1.heading:hover:after {
 }
 
 @font-face {
-  font-family: "myCustomFont";
+  font-family: "pageFont";
   src: url(../fonts/BebasNeueLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: "contentFont";
+  src: url(../fonts/EncodeSansCompressed-Thin.ttf) format("truetype");
+}
+.contentBio{
+  font-family: "contentFont" !important;
+  font-size: 1.2em;
+  word-spacing: .2em;
+}
+.contentContact{
+  font-family: "contentFont" !important;
+  font-size: 1.2em;
+  word-spacing: .2em;
 }
 
 #footerText {
- font-family: "myCustomFont" !important;
+ font-family: "pageFont" !important;
  text-align: center;
  bottom: 0;            /* to stick it to the bottom of the page*/
  width: 100%;          /* to stick it to the bottom of the page*/
@@ -120,9 +135,12 @@ h1.heading:hover:after {
 #div-imageModal{
   outline-style: none;
   width: 75%;
-  top:10% !important;
+  min-height: 0;    /*to handle the modal height in small devices*/
+  top:6% !important;
   padding: 0 !important;
   border: 2px solid white !important;
+  height: inherit;    /* overrride the properties of foundation to adjust the height of modal for small devices*/
+  margin-left: auto;  /* overrride the properties of foundation to adjust the height of modal for small devices*/
 }
 
 .navigation{
@@ -202,6 +220,8 @@ li.navList{
 }
 .columns {
   padding-bottom: 0.9375rem;
+  padding-right: 0;
+
 }
 
 .imageStyle {
@@ -217,10 +237,11 @@ li.navList{
   word-spacing: .2em;
 }
 
-.bar{
-  font-size: 8em;
+.bar {
+  font-size: 2.3em;
   font-weight: lighter;
-  color:black;
+  color:black !important;
+  float: right;
 }
 
 .facebook{
@@ -237,4 +258,7 @@ li.navList{
 
 .devianart{
   font-size: 1.5em;
+}
+i {
+  margin-right:0 !important;
 }
