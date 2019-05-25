@@ -1,15 +1,18 @@
 "use strict";
 var animated = false;
+var pageReload = false;
 
-
+// If initial image is clicked other than fading out and openiing up itself
 $("#initialImage").on("click", function() {
 	loadImageContainer();
 });
 
+
+//Page Load
 $(document).ready(function(){
 	if(window.location.hash ===''){									//First Load
  		$('#initialImage').fadeIn("slow");
- 		setTimeout(loadHeader, 2000);
+ 		setTimeout(loadHeader, 3500);
 	}
 	else if(window.location.hash !==''){
 	 loadHeader();
@@ -17,36 +20,47 @@ $(document).ready(function(){
 	$(document).foundation();
 });
 
+
 $(window).on('hashchange', function() {
-if(window.location.hash ==='#bio'){
+	if(window.location.hash ==='#bio'){
 		loadBio();
 	}
 	else if(window.location.hash ==='#contact'){
-  	loadContact();
+  		loadContact();
+	}
+	else if(window.location.hash ==='#home'){
+  		loadHome();  // Since we dont want delay showing loading images
 	}
 });
 
-
+//Happens only on page load
 function loadHeader(){
 
  if(!animated){
  $("#initialImage").fadeOut( "slow" );
  $(".header").css("visibility", "visible");
  		$(".header").animate({"margin": "0 0 0 0"}, 800, 'linear', function(){
- 			//setTimeout(loadImageContainer, 1000);
+ 			setTimeout(loadImageContainer, 1000);
  			if(window.location.hash ===''){
 				loadImageContainer();
 			}
+			else if(window.location.hash ==='#home'){
+				loadImageContainer();
+
+			}
 			else if(window.location.hash ==='#bio'){
 				loadBio();
+				pageReload = true;
+
 			}
 			else if(window.location.hash ==='#contact'){
-  			loadContact();
+  				loadContact();
+  				pageReload = true;
 			}
 			
  		});	
  		animated=true;
-}	
+	}	
 }
 
 
@@ -60,12 +74,28 @@ function loadImageContainer(){
 	});
 }
 
+function loadImageContainerWithoutanimation(){
+
+	$(".imageContainer .imageStyle").each(function(index, value){
+		var $ele = $(value);
+	});
+}
+
 function loadHome(){
-	$(".imageContainer").css("display", "block");
-  $(".div-subContainer").css("display", "none");
-  //loadImageContainer();
+	if(pageReload){
+	   //loadImageContainerWithoutanimation();
+	}
+	$("#footer").css("bottom", "0");
+	 $(".div-subContainer").css("display", "none");
+	 $(".imageContainer").css("display", "block");
+
+  //$(".div-subContainer").css("visibility", "hidden");
+  //$(".imageContainer").css("visibility", "visible");
+ 
+ //$(".imageContainer").addClass('animate');
 }
 function loadBio(){
+  $("#footer").css("bottom", "3em");
   $(".imageContainer").css("display", "none");
   $(".div-subContainer").css("visibility", "visible");
   $(".div-subContainer").css("display", "block");
@@ -73,7 +103,8 @@ function loadBio(){
 }
 
 function loadContact(){
-	$(".imageContainer").css("display", "none");
+  $("#footer").css("bottom", "3em");
+  $(".imageContainer").css("display", "none");
   $(".div-subContainer").css("visibility", "visible");
   $(".div-subContainer").css("display", "block");
   $(".div-subContainer").load("contact.html");	
@@ -81,9 +112,13 @@ function loadContact(){
 
 $("#contentWork").on("click", '.openModal', function() {
 	$(".modalImage").attr("src",$(this).data('img'));
+	$('#div-imageModal').css('max-height', $('html').height());
 	$("#div-imageModal").foundation('open');
 
 });
 
-
-
+//Clearing Cache when Modal Closes
+$('#div-imageModal').on('closed.zf.reveal', function() {
+	//$('.reveal').foundation('destroy');
+   //alert('Modal is successfully shown!');
+});

@@ -62,10 +62,30 @@ html,body{
 .header{
   width: 100%;
   height: 60px !important;
-  margin-top: -300px;
-  visibility: hidden;
+  /*margin-top: -300px;*/
+  /*visibility: hidden;*/
+  /*display: none;*/
+  position: relative;
+  /*display: none;*/
+  /*top: 0px;*/
+
+  &.animate {
+    animation-duration: 0.8s;
+    animation-name: header-slide;
+  }
+
 }
 
+  @keyframes header-slide {
+    from {
+      margin-top: -100px;
+    }
+
+    to {
+      margin-top: 0px;
+      /*display: block;*/
+    }
+  }
 
 h1.heading{
   font-family: "pageFont" !important;
@@ -202,7 +222,7 @@ li.navList{
 .animate {
   /*animation-name: fadein;
   animation-duration: 0.5s;*/
-  opacity:1;
+  //opacity:1;
 }
 
 .div-subContainer{

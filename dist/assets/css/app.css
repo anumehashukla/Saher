@@ -3793,12 +3793,15 @@ a.thumbnail {
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;      /* for footer */  
   color: black !important;
   font-family: "pageFont" !important;
   letter-spacing: .1em;
   -webkit-font-smoothing: auto; }
 
 .div-mainContainer {
+  min-height: 100%;   /* for footer */  
+  position: relative; /* for footer */  
   margin-left: 4.7em;
   margin-right: 4.7em;
   margin-top: 3em;
@@ -3807,6 +3810,7 @@ html, body {
 .header {
   width: 100%;
   height: 60px !important;
+
   margin-top: -300px;
   visibility: hidden; }
 
@@ -3849,6 +3853,41 @@ h1.heading:hover:after {
 .row {
   max-width: 100%; }
 
+.img {
+  height: 15em;
+  width: 16em;
+  padding: .4em; }
+
+.imageRowDiv {
+  text-align: center; }
+
+.columns {
+  padding-bottom: 0.9375rem;
+  padding-right: 0;
+}
+/* For Horizontal Functionality
+.columns {
+    white-space:nowrap;
+    overflow-x:scroll;
+    padding-right: 0.9375rem; }
+
+ For Horizontal Functionality
+.item {
+    display:inline-block;
+    width:150px;
+    height:150px; }
+*/
+
+.imageStyle {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px; }
+
+.div-subContainer {
+  margin-top: 4em;
+  margin-bottom: 1em;
+  visibility: hidden; }
+
 @font-face {
   font-family: "pageFont";
   src: url(../fonts/BebasNeueLight.ttf) format("truetype"); }
@@ -3867,13 +3906,18 @@ h1.heading:hover:after {
   font-size: 1.2em;
   word-spacing: .2em; }
 
-#footerText {
-  font-family: "pageFont" !important;
-  text-align: center;
+#footer {
+
   bottom: 0;
   /* to stick it to the bottom of the page*/
   width: 100%;
-  /* to stick it to the bottom of the page*/ }
+  /* to stick it to the bottom of the page*/ 
+
+  position: absolute;}
+
+#footerText {
+  font-family: "pageFont" !important;
+  text-align: center; }
 
 #initialImage {
   width: 100%;
@@ -3881,7 +3925,8 @@ h1.heading:hover:after {
 
 #div-imageModal {
   outline-style: none;
-  width: 75%;
+  /*width: 62%; */    
+  max-height: 100%
   min-height: 0;
   /*to handle the modal height in small devices*/
   top: 6% !important;
@@ -3947,27 +3992,6 @@ li.navList {
   animation-duration: 0.5s;*/
   opacity: 1; }
 
-.div-subContainer {
-  margin-top: 4em;
-  margin-bottom: 1em;
-  visibility: hidden; }
-
-.img {
-  height: 15em;
-  width: 16em;
-  padding: .4em; }
-
-.imageRowDiv {
-  text-align: center; }
-
-.columns {
-  padding-bottom: 0.9375rem;
-  padding-right: 0; }
-
-.imageStyle {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 300px; }
 
 .contactPage {
   padding-top: 3em; }
@@ -3977,9 +4001,10 @@ li.navList {
   word-spacing: .2em; }
 
 .bar {
-  font-size: 2.3em;
-  font-weight: lighter;
-  color: black !important;
+  font-size: 2em;
+  /*font-weight: lighter;
+   color: black !important;*/
+  color: #000000c9 !important;
   float: right; }
 
 .facebook {
@@ -3993,6 +4018,9 @@ li.navList {
 
 .devianart {
   font-size: 1.5em; }
+
+.artstation {
+  font-size: 1.65em; }
 
 i {
   margin-right: 0 !important; }
