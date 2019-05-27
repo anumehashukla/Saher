@@ -522,8 +522,8 @@ button {
     padding-right: 0.625rem;
     padding-left: 0.625rem; }
   .row.gutter-medium > .column, .row.gutter-medium > .columns {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem; }
+    padding-right: 0.5rem;
+    padding-left: 0.5rem; }
 
 .column, .columns {
   width: 100%;
@@ -532,8 +532,8 @@ button {
   padding-left: 0.625rem; }
   @media print, screen and (min-width: 62.5em) {
     .column, .columns {
-      padding-right: 0.9375rem;
-      padding-left: 0.9375rem; } }
+      padding-right: 0.5rem;
+      padding-left: 0.5rem; } }
   .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
     float: right; }
   .column.end:last-child:last-child, .end.columns:last-child:last-child {
@@ -3858,11 +3858,13 @@ h1.heading:hover:after {
   width: 16em;
   padding: .4em; }
 
+/*
 .imageRowDiv {
   text-align: center; }
+*/
 
 .columns {
-  padding-bottom: 0.9375rem;
+  padding-bottom: 0.5rem;
   padding-right: 0;
 }
 /* For Horizontal Functionality
@@ -3883,6 +3885,11 @@ h1.heading:hover:after {
   background-size: cover;
   height: 300px; }
 
+.imageStyle:hover {
+    webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+    filter: blur(2px);
+}
+
 .div-subContainer {
   margin-top: 4em;
   margin-bottom: 1em;
@@ -3899,12 +3906,20 @@ h1.heading:hover:after {
 .contentBio {
   font-family: "contentFont" !important;
   font-size: 1.2em;
-  word-spacing: .2em; }
+  word-spacing: .2em;} 
+  @media screen and (max-width: 62.4375em) {
+    .contentBio  {
+      font-size: 2.5em !important;
+      margin-top: 3em !important; } }
 
 .contentContact {
   font-family: "contentFont" !important;
   font-size: 1.2em;
   word-spacing: .2em; }
+  @media screen and (max-width: 62.4375em) {
+    .contentContact  {
+      font-size: 2.5em !important;
+      margin-top: 3em !important; } }
 
 #footer {
 
