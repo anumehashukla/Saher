@@ -3862,38 +3862,58 @@ h1.heading:hover:after {
 .imageRowDiv {
   text-align: center; }
 */
-
+/* For Vertical scrolling Functionality
 .columns {
   padding-bottom: 0.5rem;
   padding-right: 0;
-}
-/* For Horizontal Functionality
+}*/
+/* For Horizontal Scrolling Functionality */
 .columns {
-    white-space:nowrap;
-    overflow-x:scroll;
-    padding-right: 0.9375rem; }
+  white-space:nowrap;
+  overflow-x:scroll;
+  padding-right: 0.9375rem; }
 
- For Horizontal Functionality
+/* For Horizontal Scrolling Functionality */
 .item {
-    display:inline-block;
-    width:150px;
-    height:150px; }
-*/
+  display:inline-block;
+  width:150px;
+  height:150px; }
+
 
 .imageStyle {
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 300px; }
+  background-size: cover;}  /* for horizontal scrolling funcionality*/
 
 .imageStyle:hover {
-    webkit-filter: blur(2px); /* Chrome, Safari, Opera */
-    filter: blur(2px);
-}
+  -webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+  filter: blur(2px);}
+
+.imageHeightLargeScreen {
+  height: 470px; }
+
+.imageHeightSmallScreen {
+  height: 250px;}
+
+.rowPaddingSmallScreen{
+  padding-bottom: 1rem}
 
 .div-subContainer {
   margin-top: 4em;
   margin-bottom: 1em;
   visibility: hidden; }
+
+.div-scrollContainer {
+  text-align: center;}
+
+#div-previousBtn{
+  padding-right: 2rem;}
+#div-nextBtn{
+  padding-left: 2rem;}
+
+.scrollBtn {
+  display :inline;
+  cursor: pointer;
+  -webkit-text-stroke: 9px white;} /* For Thinninf the free font awesome icon */
 
 @font-face {
   font-family: "pageFont";

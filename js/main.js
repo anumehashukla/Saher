@@ -17,7 +17,12 @@ $(document).ready(function(){
 	else if(window.location.hash !==''){
 	 loadHeader();
 	}
-	$(document).foundation();
+	//$(document).foundation();
+
+	try {
+  		$(document).foundation();}
+	catch(err) {
+  		console.log(err.message);}
 });
 
 
@@ -117,8 +122,11 @@ $("#contentWork").on("click", '.openModal', function() {
 
 });
 
-//Clearing Cache when Modal Closes
-$('#div-imageModal').on('closed.zf.reveal', function() {
-	//$('.reveal').foundation('destroy');
-   //alert('Modal is successfully shown!');
-});
+function nextOnClick(){
+  $('#div-columnContainer').animate({scrollLeft:'+=700'},500); 
+}
+
+function previousOnClick(){
+  $('#div-columnContainer').animate({scrollLeft:'-=700'},500); 
+}
+
