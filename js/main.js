@@ -76,6 +76,7 @@ function loadImageContainer(){
 			$ele.addClass("animate");
 		},index*100);
 	});
+	
 	$(".div-scrollContainer").css("visibility", "visible");
 }
 
