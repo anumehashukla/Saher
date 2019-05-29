@@ -40,9 +40,10 @@ $(window).on('hashchange', function() {
 function loadHeader(){
 
  if(!animated){
- $("#initialImage").fadeOut( "slow" );
- $(".header").css("visibility", "visible");
+ $("#initialImage").fadeOut( "slow",function(){
+ 	 $(".header").css("visibility", "visible");
  		$(".header").animate({"margin": "0 0 0 0"}, 800, 'linear', function(){
+ 			
  			setTimeout(loadImageContainer, 1000);
  			if(window.location.hash ===''){
 				loadImageContainer();
@@ -63,6 +64,7 @@ function loadHeader(){
 			
  		});	
  		animated=true;
+ 	});
 	}	
 }
 
