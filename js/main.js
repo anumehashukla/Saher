@@ -10,15 +10,13 @@ $("#initialImage").on("click", function() {
 
 //Page Load
 $(document).ready(function(){
-	if(window.location.hash ===''){									//First Load
+   if(window.location.hash ===''){									//First Load
  		$('#initialImage').fadeIn("slow");
  		setTimeout(loadHeader, 3500);
 	}
 	else if(window.location.hash !==''){
 	 loadHeader();
 	}
-	//$(document).foundation();
-
 	try {
   		$(document).foundation();}
 	catch(err) {
@@ -130,3 +128,10 @@ function previousOnClick(){
   $('#div-columnContainer').animate({scrollLeft:'-=700'},500); 
 }
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "50%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
