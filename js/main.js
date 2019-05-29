@@ -42,8 +42,7 @@ function loadHeader(){
  if(!animated){
  $("#initialImage").fadeOut( "slow",function(){
  	 $(".header").css("visibility", "visible");
- 		$(".header").animate({"margin": "0 0 0 0"}, 800, 'linear', function(){
- 			
+ 		$(".header").animate({"margin": "0 0 0 0"}, 800, 'linear', function(){			
  			setTimeout(loadImageContainer, 1000);
  			if(window.location.hash ===''){
 				loadImageContainer();
@@ -62,7 +61,7 @@ function loadHeader(){
   				pageReload = true;
 			}
 			
- 		});	
+ 		});
  		animated=true;
  	});
 	}	
@@ -77,6 +76,7 @@ function loadImageContainer(){
 			$ele.addClass("animate");
 		},index*100);
 	});
+	$(".div-scrollContainer").css("visibility", "visible");
 }
 
 function loadImageContainerWithoutanimation(){
