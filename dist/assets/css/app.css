@@ -3955,7 +3955,7 @@ h1.heading:hover:after {
   font-family: "pageFont" !important;
   text-align: center; }
 
-#initialImage {
+.initialImage {
   width: 100%;
   display: none; }
 

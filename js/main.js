@@ -3,7 +3,7 @@ var animated = false;
 var pageReload = false;
 
 // If initial image is clicked other than fading out and openiing up itself
-$("#initialImage").on("click", function() {
+$(".initialImage").on("click", function() {
 	loadImageContainer();
 });
 
@@ -11,7 +11,7 @@ $("#initialImage").on("click", function() {
 //Page Load
 $(document).ready(function(){
    if(window.location.hash ===''){									//First Load
- 		$('#initialImage').fadeIn("slow");
+ 		$('.initialImage').fadeIn("slow");
  		setTimeout(loadHeader, 3500);
 	}
 	else if(window.location.hash !==''){
@@ -40,7 +40,7 @@ $(window).on('hashchange', function() {
 function loadHeader(){
 
  if(!animated){
- $("#initialImage").fadeOut( "slow",function(){
+ $(".initialImage").fadeOut( "slow",function(){
  	 $(".header").css("visibility", "visible");
  		$(".header").animate({"margin": "0 0 0 0"}, 800, 'linear', function(){			
  			setTimeout(loadImageContainer, 1000);
