@@ -3868,9 +3868,11 @@ h1.heading:hover:after {
 }*/
 /* For Horizontal Scrolling Functionality */
 .columns {
-  white-space:nowrap;
-  overflow-x:scroll;
   padding-right: 0.9375rem; }
+
+.hscrolling {
+  white-space:nowrap;
+  overflow-x:scroll; }
 
 /* For Horizontal Scrolling Functionality */
 .item {
