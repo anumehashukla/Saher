@@ -3795,7 +3795,7 @@ html, body {
   padding: 0;
   height: 100%;      /* for footer */  
   color: black !important;
-  font-family: "pageFont" !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
   letter-spacing: .1em;
   -webkit-font-smoothing: auto; }
 
@@ -3927,7 +3927,7 @@ h1.heading:hover:after {
   src: url(../fonts/EncodeSansCompressed-Thin.ttf) format("truetype"); }
 
 .contentBio {
-  font-family: "contentFont" !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
   font-size: 1.2em;
   word-spacing: .2em;} 
   @media screen and (max-width: 62.4375em) {
@@ -3936,7 +3936,7 @@ h1.heading:hover:after {
       margin-top: 3em !important; } }
 
 .contentContact {
-  font-family: "contentFont" !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
   font-size: 1.2em;
   word-spacing: .2em; }
   @media screen and (max-width: 62.4375em) {
@@ -3954,8 +3954,11 @@ h1.heading:hover:after {
   position: absolute;}
 
 #footerText {
-  font-family: "pageFont" !important;
-  text-align: center; }
+  font-family: 'Roboto Condensed', sans-serif !important;
+  text-align: center;}
+   @media screen and (max-width: 62.4375em) {
+    #footerText  {
+      font-size: 1.7em; } }
 
 .initialImage {
   width: 100%;
@@ -4017,6 +4020,32 @@ li.navList {
   color: black !important;
   text-decoration: none;
   padding-right: .5em; }
+
+.div-contactSociallinks {
+  display: inline;
+}
+ @media screen and (max-width: 62.4375em) {
+    .div-contactSociallinks  {
+      font-size: 2em; } }
+
+.contactSociallinks {
+  color: black !important;
+  text-decoration: none;
+  position: relative;}
+
+
+
+a.contactSociallinks:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid black;
+  width: 0%;
+  transition: 0.4s;}
+
+a.contactSociallinks:hover:after {
+  width: 100%; }
 
 .imageContainer {
   margin-top: 2em;
