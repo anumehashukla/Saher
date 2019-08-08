@@ -3815,6 +3815,7 @@ html, body {
 
 h1.heading {
   font-family: "pageFont" !important;
+  font-weight: 300;
   margin: 0px;
   font-size: 3em !important;
   font-weight: bold;
@@ -3955,7 +3956,8 @@ h1.heading:hover:after {
 
 #footerText {
   font-family: 'Roboto Condensed', sans-serif !important;
-  text-align: center;}
+  text-align: center;
+  font-size: 0.8em;}
    @media screen and (max-width: 62.4375em) {
     #footerText  {
       font-size: 1.7em; } }
@@ -4056,7 +4058,8 @@ a.contactSociallinks:hover:after {
 
 @media screen and (max-width: 62.4375em) {
     .imageContainer  {
-       margin-top: 4em;} }
+       margin-top: 4em;
+       padding-bottom: 4em;} }
 
 .imageStyle {
   transition: opacity 1s ease-in;
