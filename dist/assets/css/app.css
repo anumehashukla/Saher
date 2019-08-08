@@ -3943,6 +3943,7 @@ h1.heading:hover:after {
   @media screen and (max-width: 62.4375em) {
     .contentBio  {
       font-size: 2.5em !important;
+      margin-left:0;
       margin-top: 2em !important; } }
 
 .contentContact {
@@ -3956,7 +3957,7 @@ h1.heading:hover:after {
 
 #footer {
 
-  bottom: 0 !important;
+  bottom: 0.5em !important;
   /* to stick it to the bottom of the page*/
   width: 100%;
   /* to stick it to the bottom of the page*/ 
