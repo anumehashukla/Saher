@@ -116,12 +116,27 @@ function loadContact(){
   $(".div-subContainer").load("contact.html");	
 }
 
+/* ------ Modal Functionality ------ */
 $("#contentWork").on("click", '.openModal', function() {
 	$(".modalImage").attr("src",$(this).data('img'));
+	$(".reveal").css("width", "845px");
+	if($(this)["0"].className.includes("portrait")){
+		$(".reveal").css("width", "430px");
+	}
+	else if($(this)["0"].className.includes("pSmall")){
+		$(".reveal").css("width", "580px");
+		//$(".reveal").css("height", "1217px");
+	}
 	$('#div-imageModal').css('max-height', $('html').height());
 	$("#div-imageModal").foundation('open');
-
 });
+
+/* ------ Clearing previous image from div ------ */
+$(".close-button").on("click", function() {
+	$("#div-imageModal").foundation('close');
+	$("#div-imageModal")["0"].children[0].src = "";
+});
+
 
 function nextOnClick(){
   $('#div-columnContainer').animate({scrollLeft:'+=700'},500); 
